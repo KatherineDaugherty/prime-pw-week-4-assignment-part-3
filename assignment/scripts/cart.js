@@ -5,22 +5,20 @@ console.log('***** Cart Functions *****');
 let basket =[]; //global variable set to empty
 
 function addItem(item){  //function with a string 'item'
-  basket.push('item');  //add item to basket array
+  basket.push('things');  //add item to basket array
   return true;
 }
-console.log(addItem('item'));
-console.log(`basket contains: ${basket}`);
-
-
-
+console.log(addItem()); //returns true 
+console.log(`basket contains: ${basket}`); //one things 
+console.log('adding things', addItem([])); //returns (added another things)
+console.log(`basket now holds ${basket}`); // array in basket
 
 function listItems(){
-  for ( let i = 0; i <= basket.length; i++){
-    console.log(basket[i]);
-  }
-}
+  for( taco of basket){
+  } //loop
+  return basket; 
+}//function
 console.log('In the basket we have:', listItems());
-
 
 
 
@@ -28,4 +26,18 @@ function empty(){
   basket = [];
   return 'empty';
 }
-console.log(empty());
+console.log(empty()); //empty the basket 
+
+console.log(listItems()); //basket array is empty 
+
+console.log(addItem()); // added things
+console.log(listItems()); //listed array 'things'
+
+
+const maxItems = 5; //const max = 5 
+
+//function isFull(){
+//  for (taco for maxItems){
+//    maxItems < 
+//  }
+//}
