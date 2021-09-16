@@ -2,56 +2,61 @@ console.log('***** Cart Functions *****');
 // Make sure to test all functions here in the JS file!
 // We want to see how you are testing your code!!!
 
+let basket =[]; //Create a global variable named basket and set it to an empty array.
+const maxItems = 5; //global constant variable set to 5
 
-//I understand this is VERY messy, figured I'd leave it so you can see the struggle.
-let basket =[]; //global variable set to empty
+function addItem( item ){ //Create a function called addItem. It should:
+//take an input parameter for a string item
+//  if (isFull()) {
+//    console.log('basket is FULL');
+//  } else{
+    console.log('let us ADD some...', item + ' to the basket' );
+    basket.push( item ); //add the new item to the global array basket.
+    }
+//  }
 
-function addItem( item ){  //function with a string 'item'
-  //Why is item as parameter still showing blue? 
-  console.log('in addItem', item );
-  basket.push( item );  //add item to basket array
-  return true;
-}
-
-addItem( 'Thing 1');
-console.log(addItem('thing 2')); //returns true 
-console.log(`basket contains: ${basket}`); //one things 
-console.log('adding things', addItem('thing 3')); //returns (added another things)
+addItem( 'Tea');
+addItem('Water'); 
+console.log(`basket contains: ${basket}`); //logs the list of items
+addItem('Coffee');
 console.log(`basket now holds: ${basket}`); // array in basket
 
-function listItems(){
-  for( taco of basket){
-  } //loop
-  return basket; 
-}//function
-console.log('In the basket we have:', listItems());
+console.log('NEXT SECTION --------------------');
 
-console.log(addItem('more things'));
-console.log(listItems());
+//Create a function called listItems. It should:
+//loop over the items in the basket array
+//console.log each individual item on a new line
+function listItems (){
+  for( let item of basket){
+    console.log('for loop', item);
+} //end loop
+}// end function
 
+listItems();
+addItem('Pinneapple Juice');
+listItems();
 
 function empty(){
   basket = [];
+  console.log('The basket has been EMPTIED');
   return 'empty';
 }
 console.log('Now to empty the basket!');
 console.log(empty()); //empty the basket 
+listItems(); //basket array is empty 
+addItem('something new'); // added something new
+listItems(); //listed array 'something new"
 
-console.log(listItems()); //basket array is empty 
-
-console.log(addItem('something new')); // added something new
-console.log(listItems()); //listed array 'something new"
-
-const maxItems = 5; //global constant variable set to 5
-
-function isFull( ){ // did not add to additem successfully. 
-  console.log('in isFull');
-    if (basket < maxItems){
-      return false;
-    } // end false 
-  else {
-    return true;
-  } // end isFull 
-} // end function 
+function isFull( ){ 
+  console.log('basket is full according to function isFUll');
+return basket.length >= maxItems;
+}
 
 
+//   if (basket < maxItems){
+//     return false;
+//  } // end false 
+// else {
+//       return true;
+//  } // end isFull 
+//} // end function 
